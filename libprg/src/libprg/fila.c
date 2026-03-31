@@ -4,6 +4,7 @@
 
 #include <stdbool.h>
 #include <stdlib.h>
+#include <libprg/libprg.h>
 
 typedef struct fila {
     int* elementos;
@@ -24,9 +25,10 @@ fila_t* criar_fila (int capacidade) {
     return fila;
 }
 
+
 void enfileirar (fila_t* fila, int valor) {
 
-    if (fila->tamanho >= fila->capacidade) {
+    if (cheia(fila)) {
         exit(EXIT_FAILURE);
     }
 
@@ -35,6 +37,7 @@ void enfileirar (fila_t* fila, int valor) {
     fila->tamanho++;
 }
 int desenfileirar (fila_t* fila) {
+    if (vazia_f(fila)) exit(EXIT_FAILURE);
     int valor = fila->elementos[fila->inicio];
     fila->inicio = fila->inicio + 1;
     fila->tamanho --;
@@ -42,21 +45,24 @@ int desenfileirar (fila_t* fila) {
 }
 
 int inicio (fila_t* fila) {
-    return fila->inicio;
+    if (vazia_f(fila)) exit(EXIT_FAILURE);
+    int inicio_fila = fila->elementos[fila->inicio];
+    return inicio_fila;
 }
 
 int fim (fila_t* fila) {
-    return fila->fim;
+    if (vazia_f(fila)) exit(EXIT_FAILURE);
+    int fim_corrigido = fila->fim - 1;
+    if (fim_corrigido < 0) fim_corrigido = fila->capacidade - 1;
+    return fila->elementos[fim_corrigido];
 }
 
-bool livre (fila_t* fila) {
-    fila->inicio == fila->fim;
-    return true;
+bool vazia_f (fila_t* fila) {
+    return fila->tamanho == 0;
 }
 
 bool cheia (fila_t* fila) {
-    fila->inicio == fila->fim - 1;
-    return true;
+    return fila->tamanho >= fila->capacidade;
 }
 
 int destruir_fila (fila_t* fila) {
