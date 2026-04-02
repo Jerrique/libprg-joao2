@@ -2,7 +2,7 @@
 #define LIBPRG_LIBPRG_H
 #include <stdbool.h>
 
-/*---    PILHA   ---*/
+ /*---    PILHA   ---*/
     typedef struct pilha pilha_t;
      pilha_t* criar_pilha(int capacidade);
     int empilhar(pilha_t* pilha, int valor);
@@ -21,5 +21,13 @@
     bool vazia_f (fila_t* fila);
     bool cheia (fila_t* fila);
     int destruir_fila (fila_t* fila);
+
+ /*---   LISTAS   ---*/
+    typedef struct lista_linear lista_linear_t;
+    lista_linear_t criar_lista (int capacidade);
+    //ORDENADA
+
+    //NÃO ORDENADA
+
 
 #endif
