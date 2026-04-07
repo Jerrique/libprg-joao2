@@ -24,7 +24,9 @@
 
  /*---   LISTAS   ---*/
     typedef struct lista_linear lista_linear_t;
-    lista_linear_t criar_lista (int capacidade);
+    lista_linear_t *criar_lista (int capacidade, bool ordenada);
+    int inserir (lista_linear_t* lista_linear, int valor);
+    int remover (lista_linear_t* lista_linear, int valor);
     //ORDENADA
 
     //NÃO ORDENADA

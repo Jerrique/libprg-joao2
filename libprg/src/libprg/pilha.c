@@ -14,7 +14,14 @@ typedef struct pilha {
 
 pilha_t* criar_pilha(int capacidade) {
     pilha_t* pilha = malloc(sizeof(pilha_t));
+    if (pilha == NULL) {
+        return NULL;
+    }
     pilha->elementos = malloc(sizeof(int) * capacidade);
+    if (pilha->elementos == NULL) {
+        free(pilha);
+        return NULL;
+    }
     pilha->topo = -1;
     pilha->capacidade = capacidade;
 

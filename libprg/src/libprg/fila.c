@@ -16,7 +16,14 @@ typedef struct fila {
 
 fila_t* criar_fila (int capacidade) {
     fila_t* fila = malloc(sizeof(fila_t));
+    if (fila == NULL) {
+        return NULL;
+    }
     fila->elementos = malloc(sizeof(int) * capacidade);
+    if (fila->elementos == NULL) {
+        free(fila);
+        return NULL;
+    }
     fila->inicio = 0;
     fila->fim = 0;
     fila->tamanho = 0;
