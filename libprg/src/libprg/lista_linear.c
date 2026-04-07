@@ -32,6 +32,7 @@ lista_linear_t *criar_lista (int capacidade, bool ordenada) {
 }
 
 int inserir (lista_linear_t* lista_linear, int valor) {
+    //NÃO ORDENADA
     if (lista_linear->tamanho > lista_linear->capacidade) {
         exit(EXIT_FAILURE);
     }
@@ -41,17 +42,23 @@ int inserir (lista_linear_t* lista_linear, int valor) {
 }
 
 int remover (lista_linear_t* lista_linear, int valor) {
-    //SE ORDENADA
-    if (lista_linear->ordenada == 1) {
-        for (int i = lista_linear->elementos[lista_linear->tamanho]; i != valor; i--) //SE TIVER MAIS DE UM VALOR IGUAL???????????????
+    if (lista_linear->elementos[lista_linear->tamanho - 1] == valor) {
+        lista_linear->tamanho --;
+    }
+    //NÃO ORDENADA
+    if (lista_linear->ordenada == 0) {
+        if (lista_linear->elementos[lista_linear->tamanho - 1] == valor) {
+            lista_linear->tamanho --;
+        }
+        for (int i = lista_linear->elementos[lista_linear->tamanho]; i != valor; i--)
         {
             if (lista_linear->elementos[i] == valor) {
-                lista_linear->elementos[lista_linear->tamanho - 1] = lista_linear->elementos[i]; //SE O ULTIMO ELEMENTO QUE FOR O RETIRADO???????
+                lista_linear->elementos[lista_linear->tamanho - 1] = lista_linear->elementos[i];
             }
         }
         lista_linear->tamanho--;
     }
-    //NÃO ORDENADA
+    //ORDENADA
     else {
 
     }
