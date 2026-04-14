@@ -9,7 +9,7 @@
     int desempilhar (pilha_t* pilha);
     int tamanho (pilha_t* pilha);
     bool vazia_p (pilha_t* pilha);
-    int destroy_pilha (pilha_t* pilha);
+    int destruir_pilha (pilha_t* pilha);
 
  /*---   FILA   ---*/
     typedef struct fila fila_t;
