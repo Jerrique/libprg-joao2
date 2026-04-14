@@ -59,7 +59,7 @@ bool vazia_p (pilha_t* pilha) {
     pilha->topo < 0;
 }
 
-int destroy_pilha (pilha_t* pilha) {
+int destruir_pilha (pilha_t* pilha) {
     free(pilha->elementos);
     free(pilha);
     return 0;
