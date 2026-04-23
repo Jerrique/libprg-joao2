@@ -8,6 +8,7 @@
 
 #define CAPACIDADE_INICIAL 10
 
+/*
 typedef struct lista_linear {
     int *elementos;
     int tamanho;
@@ -83,6 +84,7 @@ int buscar (alvo) {
         indice = buscar_linear;
     }
 }
+*/
 
 //buscar_linear
 //buscar_binario
