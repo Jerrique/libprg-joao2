@@ -56,7 +56,7 @@ int tamanho (pilha_t* pilha) {
 }
 
 bool vazia_p (pilha_t* pilha) {
-    pilha->topo < 0;
+    return pilha->topo < 0;
 }
 
 int destruir_pilha (pilha_t* pilha) {
