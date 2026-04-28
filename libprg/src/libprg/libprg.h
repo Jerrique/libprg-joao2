@@ -31,5 +31,8 @@
 
     //NÃO ORDENADA
 
-
+/*---   LISTA ENCADEADA   ---*/
+    typedef struct no;
+    no_t* criar_lista_encadeada (int dado);
+    void inserir_encadeada (no_t** inicio, int dado);
 #endif

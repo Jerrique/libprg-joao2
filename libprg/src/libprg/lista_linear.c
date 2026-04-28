@@ -4,7 +4,7 @@
 
 #include <stdbool.h>
 #include <stdlib.h>
-#include <libprg/libprg.h>
+#include "libprg.h"
 
 #define CAPACIDADE_INICIAL 10
 
@@ -93,3 +93,4 @@ int buscar (alvo) {
 //ordenar
 //combinar
 //destruir;
+
