@@ -35,4 +35,8 @@
     typedef struct no no_t;
     no_t* criar_lista_encadeada (int dado);
     void inserir_encadeada (no_t** inicio, int dado);
+    bool remover_encadeada (no_t** inicio, int dado);
+    no_t* buscar (no_t** inicio, int dado);
+    void destruir_encadeada (no_t** inicio);
+
 #endif
