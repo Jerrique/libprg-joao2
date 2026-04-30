@@ -1,7 +1,7 @@
 //
 // Created by aluno on 28/04/2026.
 //
-#include "libprog/libprg.h"
+#include "libprg.h"
 #include <stdlib.h>
 
 typedef struct no {
@@ -19,7 +19,7 @@ typedef struct no {
 
 no_t* criar_lista_encadeada (int dado) {
     no_t* no = malloc(sizeof(no_t));
-    no->dado = dadp;
+    no->dado = dado;
     no->proximo = NULL;
 
     return no;
@@ -30,6 +30,7 @@ void inserir_encadeada (no_t** inicio, int dado) {
     novo->proximo = *inicio;
     *inicio = novo;
 }
+
 // remover
 // remover
 // buscar
