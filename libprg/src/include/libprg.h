@@ -39,4 +39,8 @@
     no_t* buscar (no_t** inicio, int dado);
     void destruir_encadeada (no_t** inicio);
 
+/*---   DUPLAMENTE ENCADEADA   ---*/
+
+    typedef struct nod nod_t;
+    nod_t* criar_lista_encadeada_dupla (int dado);
 #endif
