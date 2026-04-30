@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.21)
 
 # Add header files here manually
 set(HEADERS
-        "src/libprg/libprg.h"
+        "src/include/libprg.h"
 )
 # Add source files here manually
 set(SOURCES 
@@ -11,7 +11,7 @@ set(SOURCES
 
 add_library(libprg
         src/libprg/pilha.c
-        src/libprg/libprg.h
+        src/include/libprg.h
         src/libprg/fila.c
         src/libprg/lista_linear.c
         src/libprg/lista_encadeada.c)
