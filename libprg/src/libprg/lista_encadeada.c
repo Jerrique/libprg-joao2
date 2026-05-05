@@ -9,11 +9,7 @@ typedef struct no {
     no_t* proximo;
 }no_t;
 
-typedef struct nod {
-    int dado;
-    no_t* anterior;
-    no_t* proximo;
-}nod_t;
+
 // no_t* criar_lista_encadeada () {
 //     no_t* no = malloc(sizeof(no_t));
 //     no->dado = (int) NULL;,
@@ -30,21 +26,9 @@ no_t* criar_lista_encadeada (int dado) {
     return no;
 }
 
-nod_t* criar_lista_encadeada_dupla (int dado) {
-    no_t* no = malloc(sizeof(no_t));
-    nod->dado = dado;
-    nod.anterior = NULL;
-    no->proximo = NULL;
 
-    return no;
-}
 
-void inserir_encadeada_dupla (nod_t** inicio, int dado) {
-    nod_t* novo = criar_lista_encadeada_dupla(dado);
-    novo->proximo = *inicio;
-    (*inicio)->anterior = novo;
-    *inicio = novo;
-}
+
 
 bool remover_encadeada (no_t** inicio, int dado) {
     no_t* atual = *inicio;
