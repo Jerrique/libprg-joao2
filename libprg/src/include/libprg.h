@@ -33,11 +33,13 @@
 
 /*---   LISTA ENCADEADA   ---*/
     typedef struct no no_t;
-    no_t* criar_lista_encadeada (int dado);
-    void inserir_encadeada (no_t** inicio, int dado);
-    bool remover_encadeada (no_t** inicio, int dado);
-    no_t* buscar (no_t** inicio, int dado);
-    void destruir_encadeada (no_t** inicio);
+    typedef struct lista_encadeada lista_encadeada_t;
+    no_t* criar_no (int dado);
+    lista_encadeada_t* criar_lista_encadeada (bool ordenada);
+    void inserir_encadeada (lista_encadeada_t* inicio, int dado);
+    bool remover_encadeada (lista_encadeada_t* lista, int dado);
+    no_t* buscar (lista_encadeada_t* lista, int dado);
+    void destruir_encadeada (lista_encadeada_t* lista);
 
 /*---   DUPLAMENTE ENCADEADA   ---*/
 
