@@ -31,7 +31,7 @@
 
     //NÃO ORDENADA
 
-/*---   LISTA ENCADEADA   ---*/
+ /*---   LISTA ENCADEADA   ---*/
     typedef struct no no_t;
     typedef struct lista_encadeada lista_encadeada_t;
     no_t* criar_no (int dado);
@@ -41,7 +41,7 @@
     no_t* buscar (lista_encadeada_t* lista, int dado);
     void destruir_encadeada (lista_encadeada_t* lista);
 
-/*---   DUPLAMENTE ENCADEADA   ---*/
+ /*---   DUPLAMENTE ENCADEADA   ---*/
 
     typedef struct nod nod_t;
     nod_t* criar_lista_encadeada_dupla (int dado);
@@ -50,5 +50,8 @@
     nod_t* buscar_encadeada_dupla (nod_t** inicio, int dado);
     void destruir_encadeada_dupla (nod_t** inicio);
 
+ /*---   ALGORITMOS DE ORDENAÇÃO   ---*/
+
+   int* bubble_sort (int* vetor, int tamanho);
 
 #endif

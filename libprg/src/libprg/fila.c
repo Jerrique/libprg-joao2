@@ -4,7 +4,7 @@
 
 #include <stdbool.h>
 #include <stdlib.h>
-#include <libprg/libprg.h>
+#include <libprg.h>
 
 typedef struct fila {
     int* elementos;
