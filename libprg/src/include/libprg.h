@@ -53,5 +53,7 @@
  /*---   ALGORITMOS DE ORDENAÇÃO   ---*/
 
    int* bubble_sort (int* vetor, int tamanho);
+   int* merge_sort (int* vetor, int esquerda, int direita);
+   int* merge (int* vetor, int esquerda, int meio, int direita);
 
 #endif
