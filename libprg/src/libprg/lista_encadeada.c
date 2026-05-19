@@ -39,10 +39,10 @@ lista_encadeada_t* criar_lista_encadeada(bool ordenada) {
     return lista;
 }
 
-void inserir_encadeada (lista_encadeada_t* lista, int dado) {
+void inserir_encadeada (lista_encadeada_t* lista_encadeada, int dado) {
     no_t* novo = criar_no(dado);
-    novo->proximo = lista->inicio;
-    lista->inicio = novo;
+    novo->proximo = lista_encadeada->inicio;
+    lista_encadeada->inicio = novo;
 }
 
 bool remover_encadeada (lista_encadeada_t* lista, int dado) {
@@ -69,7 +69,7 @@ no_t* buscar (lista_encadeada_t* lista, int dado) {
     no_t* atual = lista->inicio;
 
     while (atual) { //OU pode ser "while (atual != NULL)"
-        if (atual->dado == dado) return lista;
+        if (atual->dado == dado) return atual;
         atual = atual->proximo;
     }
 

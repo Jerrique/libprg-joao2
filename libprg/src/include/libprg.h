@@ -62,4 +62,9 @@
    dicionario_t* criar_dicionario (int m);
    int inserir_hash (dicionario_t* d, char* chave, int valor);
 
+ /*---   ÁRVORE BINÁRIA   ---*/
+   typedef struct nobin nobin_t;
+   nobin_t* criar_nobin (int dado);
+   nobin_t* adicionar_nobin (nobin_t* raiz, int dado);
+
 #endif
