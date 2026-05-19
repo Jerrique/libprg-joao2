@@ -20,8 +20,8 @@ nod_t* criar_lista_encadeada_dupla (int dado) {
     return nod;
 }
 
-void inserir_encadeada_dupla (nod_t** inicio, int dado) {
-    nod_t* novo = criar_lista_encadeada_dupla(dado);
+void inserir_encadeada_dupla(nod_t **inicio, int dado) {
+    nod_t *novo = criar_lista_encadeada_dupla(dado);
     novo->proximo = *inicio;
     (*inicio)->anterior = novo;
     *inicio = novo;
