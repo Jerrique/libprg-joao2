@@ -66,5 +66,8 @@
    typedef struct nobin nobin_t;
    nobin_t* criar_nobin (int dado);
    nobin_t* adicionar_nobin (nobin_t* raiz, int dado);
+   void travessia_emordem (nobin_t* raiz);
+   void travessia_preordem (nobin_t* raiz);
+   void travessia_posordem (nobin_t* raiz);
 
 #endif

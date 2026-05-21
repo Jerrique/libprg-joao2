@@ -2,6 +2,7 @@
 // Created by aluno on 19/05/2026.
 //
 
+#include <stdio.h>
 #include <stdlib.h>
 
 #include "libprg.h"
@@ -41,3 +42,27 @@ nobin_t* adicionar_nobin (nobin_t* raiz, int dado) {
 
 //remover
 //destruir
+
+void travessia_preordem (nobin_t* raiz) {
+    if (raiz != NULL) {
+        printf("%d", raiz->dado);
+        travessia_emordem(raiz->proximo_menor);
+        travessia_emordem(raiz->proximo_maior);
+    }
+}
+
+void travessia_emordem (nobin_t* raiz) {
+    if (raiz != NULL) {
+        travessia_emordem(raiz->proximo_menor);
+        printf("%d", raiz->dado);
+        travessia_emordem(raiz->proximo_maior);
+    }
+}
+
+void travessia_posordem (nobin_t* raiz) {
+    if (raiz != NULL) {
+        travessia_emordem(raiz->proximo_menor);
+        travessia_emordem(raiz->proximo_maior);
+        printf("%d", raiz->dado);
+    }
+}
