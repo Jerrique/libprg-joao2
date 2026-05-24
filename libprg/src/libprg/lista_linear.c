@@ -8,7 +8,6 @@
 
 #define CAPACIDADE_INICIAL 10
 
-/*
 typedef struct lista_linear {
     int *elementos;
     int tamanho;
@@ -33,9 +32,9 @@ lista_linear_t *criar_lista(bool ordenada) {
     return lista_linear;
 }
 
-int inserir(lista_linear_t *lista_linear, int alvo) {
-
+/*int inserir(lista_linear_t *lista_linear, int alvo) {
     int indice = buscar(lista_linear, alvo);
+}*/
     //ORDENADA
 
 
@@ -74,7 +73,7 @@ int remover(lista_linear_t *lista_linear, int valor) {
     return valor;
 }
 
-int buscar (alvo) {
+/*int buscar (alvo) {
     //ORDENADA
     if (lista_linear->ordenada) {
         indice = buscar_binario;
@@ -83,8 +82,7 @@ int buscar (alvo) {
     else {
         indice = buscar_linear;
     }
-}
-*/
+}*/
 
 //buscar_linear
 //buscar_binario

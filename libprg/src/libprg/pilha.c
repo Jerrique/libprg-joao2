@@ -31,7 +31,7 @@ pilha_t* criar_pilha(int capacidade) {
 
 int empilhar(pilha_t* pilha, int valor) {
 
-    if (pilha->topo + 1 < pilha->capacidade) {
+    if (pilha->topo + 1 == pilha->capacidade) {
         pilha->capacidade *= 2;
         pilha->elementos = realloc(pilha->elementos, pilha->capacidade * sizeof(int));
     }
