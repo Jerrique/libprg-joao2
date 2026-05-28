@@ -18,7 +18,7 @@ noavl_t *criar_noavl(int dado) {
     no->dado = dado;
     no->esquerda = NULL;
     no->direita = NULL;
-    no->altura = 0;
+    no->altura = 1;
 
     return no;
 }
@@ -65,7 +65,13 @@ noavl_t *rotacao_direita(noavl_t *V) {
     return U;
 }
 
-//rotacao_dupla_direita
+noavl_t* rotacao_dupla_direita(noavl_t *V) {
+    // rotação simples à esquerda no filho esquerdo de v
+    V->esquerda = rotacao_esquerda(V->esquerda);
+    // rotação simples à direita em v
+    return rotacao_direita(V);
+}
+
 noavl_t *rotacao_esquerda(noavl_t *V) {
     noavl_t *U = V->direita;
     noavl_t *T2 = U->esquerda;
@@ -81,5 +87,76 @@ noavl_t *rotacao_esquerda(noavl_t *V) {
     return U;
 }
 
-//rotacao_dupla_esquerda
-//balancear
+noavl_t* rotacao_dupla_esquerda (noavl_t *V) {
+    V->direita;
+}
+
+noavl_t* balancear(noavl_t* V) {
+    int fb = fator_balanceamento(v);
+    if (fb > 1) {
+        if (fator_balanceamento(v->esquerda) > 0) {
+            return rotacao_direita(v);
+        } else {
+            return rotacao_dupla_direita(v);
+        }
+    } else if (fb < -1) {
+        if (fator_balanceamento(v->direita) < 0) {
+            return rotacao_esquerda(v);
+        } else {
+            return rotacao_dupla_esquerda(v);
+        }
+    }
+    return v;
+}
+
+noavl_t* balancear (noavl_t* V) {
+
+    if (fb > 1) {
+        if (fator_balanceamento(V->esquerda) > 0) {
+            return rotacao_direita(V);
+        }
+        return rotacao_dupla_direita(V);
+    }
+
+    if (fb < -1) {
+        if (fator_balanceamento(V->direita) < 0) {
+            return rotacao_esquerda(V);
+        }
+        return rotacao_dupla_esquerda(V);
+    }
+
+    return V;
+
+}
+
+noavl_t* remover_noavl (noavl_t* raiz, int dado) {
+    if (raiz == NULL) return NULL;
+
+    if (dado < raiz->dado) {
+        raiz->esquerda = remover_noavl(raiz->esquerda, dado);
+    } else if (dado > raiz->dado) {
+        raiz->direita = remover_noavl(raiz->direita, dado);
+    } else {
+        if (raiz->direita == NULL || raiz->esquerda ==NULL) { //1 ou 0 filhos
+            noavl_t* temp = raiz->esquerda != NULL ? raiz : raiz->direita;
+            if (temp == NULL) { //0 filhos
+                free(raiz);
+                return NULL;
+            } else { //2 filhos
+                // Encontra o menor valor da subarvore da direita
+                noavl_t* temp = raiz->direita;
+                while (temp && temp->esquerda != NULL) {
+                    temp = temp->esquerda;
+                }
+                raiz->dado = temp->dado;
+                raiz->direita = remover_noavl(raiz->direita, temp->dado);
+
+            }
+        }
+        if (raiz != NULL) {
+            raiz->altura + 1 + max(altura_avl(raiz->esquerda), altura_avl(raiz->direita));
+            raiz=balancear(raiz);
+        }
+        return raiz;
+    }
+}

@@ -40,7 +40,33 @@ nobin_t* adicionar_nobin (nobin_t* raiz, int dado) {
     return raiz;
 }
 
-//remover
+nobin_t* remover_nobin (nobin_t* raiz, int dado) {
+    if (raiz == NULL) return NULL;
+
+    if (dado < raiz->dado) {
+        raiz->proximo_menor = remover_nobin(raiz->proximo_menor, dado);
+    } else if (dado > raiz->dado) {
+        raiz->proximo_maior = remover_nobin(raiz->proximo_maior, dado);
+    } else {
+        if (raiz->proximo_maior == NULL || raiz->proximo_menor ==NULL) { //1 ou 0 filhos
+            nobin_t* temp = raiz->proximo_menor != NULL ? raiz : raiz->proximo_maior;
+            if (temp == NULL) { //0 filhos
+                free(raiz);
+                return NULL;
+            } else { //2 filhos
+                // Encontra o menor valor da subarvore da direita
+                nobin_t* temp = raiz->proximo_maior;
+                while (temp && temp->proximo_menor != NULL) {
+                    temp = temp->proximo_menor;
+                }
+                raiz->dado = temp->dado;
+                raiz->proximo_maior = remover_nobin(raiz->proximo_maior, temp->dado);
+
+            }
+        }
+    }
+}
+
 //destruir
 
 void travessia_preordem (nobin_t* raiz) {

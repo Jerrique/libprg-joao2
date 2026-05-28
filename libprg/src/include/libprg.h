@@ -69,6 +69,7 @@
    void travessia_emordem (nobin_t* raiz);
    void travessia_preordem (nobin_t* raiz);
    void travessia_posordem (nobin_t* raiz);
+   nobin_t* remover_nobin (nobin_t* raiz, int dado);
 
  /*---   ARVORE AVL   ---*/
    typedef struct noavl noavl_t;
@@ -78,5 +79,8 @@
    noavl_t* adicionar_noavl (noavl_t* raiz, int dado);
    noavl_t* rotacao_esquerda (noavl_t* raiz);
    noavl_t *rotacao_direita(noavl_t *V);
+   noavl_t* balancear (noavl_t* V);
+   noavl_t* rotacao_dupla_direita(noavl_t *V);
+   noavl_t* remover_noavl (noavl_t* raiz, int dado);
 
 #endif
