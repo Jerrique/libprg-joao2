@@ -81,53 +81,35 @@ noavl_t *rotacao_esquerda(noavl_t *V) {
     U->esquerda = V;
     V->direita = T2;
 
-    V->altura = max(altura_avl(V->esquerda), altura_avl(V->direita))
-    +1;
-    U->altura = max(altura_avl(U->esquerda), altura_avl(U->direita))
-    +1;
+    V->altura = max(altura_avl(V->esquerda), altura_avl(V->direita)) +1;
+    U->altura = max(altura_avl(U->esquerda), altura_avl(U->direita)) +1;
 
     return U;
 }
 
 noavl_t *rotacao_dupla_esquerda(noavl_t *V) {
-    V->direita;
+    V->direita = rotacao_esquerda(V->direita);
+    return rotacao_esquerda(V);
 }
 
-// noavl_t *balancear(noavl_t *V) {
-//     int fb = fator_balanceamento(v);
-//     if (fb > 1) {
-//         if (fator_balanceamento(v->esquerda) > 0) {
-//             return rotacao_direita(v);
-//         } else {
-//             return rotacao_dupla_direita(v);
-//         }
-//     } else if (fb < -1) {
-//         if (fator_balanceamento(v->direita) < 0) {
-//             return rotacao_esquerda(v);
-//         } else {
-//             return rotacao_dupla_esquerda(v);
-//         }
-//     }
-//     return v;
-// }
-//
-// noavl_t *balancear(noavl_t *V) {
-//     if (fb > 1) {
-//         if (fator_balanceamento(V->esquerda) > 0) {
-//             return rotacao_direita(V);
-//         }
-//         return rotacao_dupla_direita(V);
-//     }
-//
-//     if (fb < -1) {
-//         if (fator_balanceamento(V->direita) < 0) {
-//             return rotacao_esquerda(V);
-//         }
-//         return rotacao_dupla_esquerda(V);
-//     }
-//
-//     return V;
-// }
+noavl_t *balancear(noavl_t *V) {
+    int fb = fator_balanceamento(V);
+    if (fb > 1) {
+        if (fator_balanceamento(V->esquerda) > 0) {
+            return rotacao_direita(V);
+        }
+        return rotacao_dupla_direita(V);
+    }
+
+    if (fb < -1) {
+        if (fator_balanceamento(V->direita) < 0) {
+            return rotacao_esquerda(V);
+        }
+        return rotacao_dupla_esquerda(V);
+    }
+
+    return V;
+}
 
 noavl_t *remover_noavl(noavl_t *raiz, int dado) {
     if (raiz == NULL) return NULL;
