@@ -72,8 +72,8 @@ nobin_t* remover_nobin (nobin_t* raiz, int dado) {
 void travessia_preordem (nobin_t* raiz) {
     if (raiz != NULL) {
         printf(" %d", raiz->dado);
-        travessia_emordem(raiz->proximo_menor);
-        travessia_emordem(raiz->proximo_maior);
+        travessia_preordem(raiz->proximo_menor);
+        travessia_preordem(raiz->proximo_maior);
     }
 }
 
@@ -87,8 +87,8 @@ void travessia_emordem (nobin_t* raiz) {
 
 void travessia_posordem (nobin_t* raiz) {
     if (raiz != NULL) {
-        travessia_emordem(raiz->proximo_menor);
-        travessia_emordem(raiz->proximo_maior);
+        travessia_posordem(raiz->proximo_menor);
+        travessia_posordem(raiz->proximo_maior);
         printf(" %d", raiz->dado);
     }
 }
