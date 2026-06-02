@@ -50,7 +50,7 @@ lista_linear_t *criar_lista(bool ordenada) {
     // lista_linear->elementos[lista_linear->tamanho] = alvo;
     // lista_linear->tamanho++;
     // return 0;
-}
+//}
 
 int remover(lista_linear_t *lista_linear, int valor) {
     if (lista_linear->elementos[lista_linear->tamanho] == valor) {
