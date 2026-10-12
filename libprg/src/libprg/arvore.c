@@ -67,7 +67,15 @@ nobin_t* remover_nobin (nobin_t* raiz, int dado) {
     }
 }
 
-//destruir
+
+void destruir_noa(nobin_t *raiz) {
+    if (raiz == NULL) return;
+
+    destruir_noa(raiz->proximo_menor);
+    destruir_noa(raiz->proximo_maior);
+    free(raiz);
+}
+
 
 void travessia_preordem (nobin_t* raiz) {
     if (raiz != NULL) {
